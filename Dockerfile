@@ -2,21 +2,21 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Install dependencies first (for better caching)
+# Copy package files and install with legacy-peer-deps to avoid version conflict
 COPY package*.json ./
-RUN npm ci
+RUN npm install --legacy-peer-deps
 
-# Copy the rest of the application
+# Copy the rest of the app
 COPY . .
 
-# Build the application
+# Build the app
 RUN npm run build
 
-# Set environment to production
+# Set production env
 ENV NODE_ENV=production
 
 # Expose the port
 EXPOSE 3000
 
-# Start the application
-CMD ["npm", "start"] 
+# Start the app
+CMD ["npm", "start"]
