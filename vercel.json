@@ -1,8 +1,5 @@
 {
-  "build": {
-    "env": {
-      "NPM_FLAGS": "--legacy-peer-deps"
-    }
-  },
-  "rootDirectory": "app"
+  "rootDirectory": "app",
+  "buildCommand": "npm install --legacy-peer-deps && npm run build",
+  "outputDirectory": ".next"
 }
