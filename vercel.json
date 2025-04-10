@@ -3,5 +3,6 @@
     "env": {
       "NPM_FLAGS": "--legacy-peer-deps"
     }
-  }
+  },
+  "rootDirectory": "frontend"
 }
